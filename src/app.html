@@ -1,0 +1,132 @@
+<template>
+    <require from="material-components-web/material-components-web.css"></require>
+    <require from="./app.css"></require>
+
+    <aside class="mdc-persistent-drawer" ref="drawerEl">
+        <nav class="mdc-persistent-drawer__drawer">
+            <div class="mdc-persistent-drawer__toolbar-spacer"></div>
+            <div class="mdc-list-group">
+                <nav class="mdc-list">
+                    <a class="mdc-list-item mdc-persistent-drawer--selected" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+                    </a>
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">star</i>Star
+                    </a>
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">send</i>Sent Mail
+                    </a>
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">drafts</i>Drafts
+                    </a>
+                </nav>
+
+                <hr class="mdc-list-divider">
+
+                <nav class="mdc-list">
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
+                    </a>
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">delete</i>Trash
+                    </a>
+                    <a class="mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">report</i>Spam
+                    </a>
+                </nav>
+            </div>
+        </nav>
+    </aside>
+
+    <div class="demo-content">
+        <header class="mdc-toolbar">
+            <div class="mdc-toolbar__row">
+                <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+                    <i click.delegate="toggleDrawer()" class="material-icons mdc-toolbar__menu-icon">menu</i>
+                    <span class="mdc-toolbar__title">Toolbar</span>
+                </section>
+                <section class="mdc-toolbar__section mdc-toolbar__section--align-end" role="toolbar">
+                    <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Download" alt="Download">file_download</a>
+                    <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Print this page" alt="Print this page">print</a>
+                    <a href="#" class="material-icons mdc-toolbar__icon" aria-label="Bookmark this page" alt="Bookmark this page">bookmark</a>
+                </section>
+            </div>
+        </header>
+
+        <main class="mdc-toolbar-fixed-adjust demo-main">
+            <div>
+                <button class="mdc-button mdc-button--raised">
+                    Baseline
+                </button>
+
+                <button class="mdc-button mdc-button--raised mdc-button--compact">
+                    Compact
+                </button>
+
+                <button class="mdc-button mdc-button--raised mdc-button--dense">
+                    Dense
+                </button>
+
+                <button class="mdc-button mdc-button--raised">
+                    <i class="material-icons mdc-button__icon">favorite</i>
+                    Icon
+                </button>
+
+                <a href="javascript:void(0)" class="mdc-button mdc-button--raised">
+                    Link
+                </a>
+            </div>
+
+            <div class="mdc-form-field">
+                <div class="mdc-checkbox">
+                    <input type="checkbox" id="native-js-checkbox" class="mdc-checkbox__native-control">
+                    <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                            <path class="mdc-checkbox__checkmark__path" fill="none" stroke="white" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                    </div>
+                </div>
+                <label for="native-js-checkbox">Default checkbox</label>
+            </div>
+
+            <br>
+
+            <div class="mdc-text-field">
+                <input type="text" id="my-text-field" class="mdc-text-field__input">
+                <label class="mdc-text-field__label" for="my-text-field">Hint text</label>
+                <div class="mdc-text-field__bottom-line"></div>
+            </div>
+            <br>
+
+            <div class="mdc-text-field">
+                <input required="" pattern=".{8,}" type="password" class="mdc-text-field__input" id="pw" value.bind="password">
+                <label for="pw" class="mdc-text-field__label mdc-text-field__label--shake">Choose password</label>
+                <div class="mdc-text-field__bottom-line"></div>
+            </div>
+            <br>
+            <div>Password: ${ password }</div>
+            <br>
+
+            <div class="mdc-text-field mdc-text-field--box">
+                <input required="" pattern=".{8,}" type="text" id="tf-box" class="mdc-text-field__input" value.bind="name" />
+                <label for="tf-box" class="mdc-text-field__label mdc-text-field__label--shake">Your Name</label>
+                <div class="mdc-text-field__bottom-line"></div>
+            </div>
+            <br>
+            <div>Name: ${ name }</div>
+            <br>
+            <br>
+
+            <div class="mdc-text-field mdc-text-field--box mdc-text-field--with-leading-icon">
+                <i class="material-icons mdc-text-field__icon" tabindex="0">event</i>
+                <input type="text" id="tf-box-leading" class="mdc-text-field__input custom-text-field-input">
+                <label for="tf-box-leading" class="mdc-text-field__label">Your name</label>
+                <div class="mdc-text-field__bottom-line"></div>
+            </div>
+
+            <br>
+
+        </main>
+    </div>
+</template>
